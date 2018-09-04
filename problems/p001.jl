@@ -1,8 +1,14 @@
-sum = 0
-for x in 1:999
-    if x % 3 == 0 || x % 5 == 0
-        global sum += x
+using BenchmarkTools
+
+function solve()
+    sum = 0
+    for x in 1:999
+        if (x % 3 == 0) || (x % 5 == 0)
+            sum += x
+        end
     end
+    return sum
 end
 
-println(sum)
+r = @btime solve()
+println(r)
