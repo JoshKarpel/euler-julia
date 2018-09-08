@@ -1,5 +1,3 @@
-using BenchmarkTools
-
 function solve()
     fib_nm1 = 1
     fib_n = 1
@@ -14,6 +12,3 @@ function solve()
 
     return even_fib_sum
 end
-
-r = @btime solve()
-println(r)
